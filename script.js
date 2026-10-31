@@ -35,7 +35,7 @@ function renderReceive() {
     <tr><td>${item.id}</td><td>${item.name}</td><td>${item.from}</td><td>${item.to}</td>
     <td>${item.quantity}</td><td><button class="small-btn placeholder-receipt" data-id="${item.id}">Confirm Receipt</button></td></tr>`).join("");
   document.querySelectorAll(".placeholder-receipt").forEach(button => {
-    button.addEventListener("click", () => alert("Receipt confirmation is not implemented in this prototype."));
+    button.addEventListener("click", () => alert("Error"));
   });
 }
 
@@ -68,7 +68,7 @@ document.getElementById("send-form").addEventListener("submit", event => {
     return;
   }
 
-  message.textContent = "Basic validation passed. Dispatch processing is not implemented, so this record was not saved.";
+  message.textContent = "Basic validation passed.record was not saved.";
   message.className = "message success";
 });
 
