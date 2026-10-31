@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFG Movement Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>SFG Tracker</h2>
+      <p class="side-note">Semi-Finished Goods</p>
+      <nav>
+        <button class="nav-link active" data-screen="dashboard">Dashboard</button>
+        <button class="nav-link" data-screen="send">Send SFG</button>
+        <button class="nav-link" data-screen="receive">Receive SFG</button>
+        <button class="nav-link" data-screen="history">Movement History</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1 id="page-title">Dashboard</h1>
+          <p>A simple prototype for tracking SFG movement between plants.</p>
+        </div>
+        <span class="prototype-tag">UI Prototype</span>
+      </header>
+
+      <section id="dashboard" class="screen active">
+        <div class="cards">
+          <div class="card"><p>Total Dispatches</p><h2>24</h2></div>
+          <div class="card"><p>Pending Receipts</p><h2>6</h2></div>
+          <div class="card"><p>Completed Receipts</p><h2>18</h2></div>
+        </div>
+        <div class="panel">
+          <h3>Recent Movements</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>SFG ID</th><th>SFG Name</th><th>From</th><th>To</th><th>Quantity</th><th>Status</th></tr></thead>
+              <tbody id="recent-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="send" class="screen">
+        <div class="panel form-panel">
+          <h3>Send Semi-Finished Goods</h3>
+          <p class="muted">Enter the basic details of the SFG movement.</p>
+          <form id="send-form">
+            <div class="form-grid">
+              <label>SFG ID<input id="sfg-id" required placeholder="e.g. SFG-101"></label>
+              <label>SFG Name<input id="sfg-name" required placeholder="e.g. Header Assembly"></label>
+              <label>Quantity<input id="quantity" type="number" min="1" required placeholder="Enter quantity"></label>
+              <label>Sending Plant
+                <select id="sending-plant" required>
+                  <option value="">Select plant</option><option>Plant 1</option><option>Plant 2</option><option>Plant 3</option>
+                </select>
+              </label>
+              <label>Receiving Plant
+                <select id="receiving-plant" required>
+                  <option value="">Select plant</option><option>Plant 1</option><option>Plant 2</option><option>Plant 3</option>
+                </select>
+              </label>
+              <label>Department
+                <select id="department" required>
+                  <option value="">Select department</option><option>Headers</option><option>Sheet Metal</option>
+                </select>
+              </label>
+              <label class="full-width">Job Order ID<input id="job-order" required placeholder="e.g. JO-2026-001"></label>
+            </div>
+            <button class="primary-btn" type="submit">Submit</button>
+            <p id="form-message" class="message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="receive" class="screen">
+        <div class="panel">
+          <h3>Dispatched SFG Records</h3>
+          <p class="muted">Sample records waiting for receipt confirmation.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>SFG ID</th><th>SFG Name</th><th>From</th><th>To</th><th>Quantity</th><th>Action</th></tr></thead>
+              <tbody id="receive-table"></tbody>
+            </table>
+          </div>
+          <p class="muted note">Confirm Receipt is a placeholder. The actual receipt workflow is not implemented.</p>
+        </div>
+      </section>
+
+      <section id="history" class="screen">
+        <div class="panel">
+          <div class="panel-heading">
+            <div><h3>Movement History</h3><p class="muted">Static demonstration records.</p></div>
+            <input id="history-search" class="search-input" placeholder="Search sample records...">
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Date</th><th>SFG ID</th><th>SFG Name</th><th>From</th><th>To</th><th>Department</th><th>Quantity</th><th>Status</th></tr></thead>
+              <tbody id="history-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer> SFG Movement Tracker · Beginner UI demonstration only </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

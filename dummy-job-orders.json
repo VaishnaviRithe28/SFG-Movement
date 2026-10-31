@@ -1,0 +1,29 @@
+{
+  "description": "Dummy job order data for UI demonstration only. No system integration is implemented.",
+  "jobOrders": [
+    {
+      "jobOrderId": "JO-2026-001",
+      "product": "Header Assembly",
+      "plant": "Plant 1",
+      "department": "Headers",
+      "plannedQuantity": 200,
+      "status": "In Progress"
+    },
+    {
+      "jobOrderId": "JO-2026-002",
+      "product": "Side Panel",
+      "plant": "Plant 2",
+      "department": "Sheet Metal",
+      "plannedQuantity": 150,
+      "status": "Open"
+    },
+    {
+      "jobOrderId": "JO-2026-003",
+      "product": "Metal Cover",
+      "plant": "Plant 3",
+      "department": "Sheet Metal",
+      "plannedQuantity": 90,
+      "status": "Completed"
+    }
+  ]
+}
